@@ -1,0 +1,134 @@
+// LISTAR
+GET http://localhost:5000/usuarios
+Content-Type: application/json
+
+
+{
+
+}
+
+// CADASTRAR/REGISTRAR
+###
+POST http://localhost:5000/usuarios
+Content-Type: application/json
+
+{
+  "nome": "q",
+  "email": "q@gmail.com",
+  "senha": "q",
+  "confirmarSenha": "q",
+  "curso": "q",
+  "disciplina": "q",
+  "periodo": 5 ,
+  "tipoUsuario": "monitor"
+}
+
+###
+PUT http://localhost:5000/usuarios/
+Content-Type: application/json
+
+
+{
+  "nome": "",
+  "email": "",
+  "senha": "",
+  "confirmarSenha": "",
+  "curso": "",
+  "disciplina": "",
+  "periodo": ,
+  "tipoUsuario": ""
+}
+
+// EXCLUIR USUÁRIO
+###
+DELETE http://localhost:5000/usuarios/8
+
+
+// LOGAR
+###
+POST http://localhost:5000/usuarios/login
+Content-Type: application/json
+
+{
+  "email": "",
+  "senha": ""
+}
+
+// CRIAR PERGUNTAS/POSTS"
+###
+POST http://localhost:5000/usuarios/posts
+Content-Type: application/json
+
+{
+  "alunoId": "671f814e1db330c70b3adebc", 
+  "categoria": "Tecnologia",
+  "titulo": "Pessoal vocês ja tiveram aula de teste ?",
+  "conteudo": "Estou em dúvida, porque ouvi falar que um professor que chegou para substituir Jhonatan não fez um bom trabalho."
+  
+}
+
+// listando os posts
+###
+GET  http://localhost:5000/usuarios/posts/listar
+Content-Type: application/json
+
+{
+  
+}
+
+
+
+// Deletar post
+###
+DELETE http://localhost:5000/usuarios/posts/672e7ad095c5f412c4a5cb98
+Content-Type: application/json
+
+{
+
+}
+
+// Dar like e ao mesmo tempo remover like do post
+###
+POST http://localhost:5000/usuarios/posts/6733ce98cfd409ba2a13a40f/like 
+Content-Type: application/json
+
+{
+  "userId": "67241d7dca748411e52964d4"
+}
+
+
+
+// Criar comentario
+###
+POST http://localhost:5000/usuarios/posts/6734070d4eabeb9fd7bce89a/comentarios
+Content-Type: application/json
+
+ 
+{
+  "usuarioId": "672aa5a9f153dc4137964551",
+  "conteudo": "Hoje quero é descansar, essa vida de garoto de programa não da para mim!."
+}
+//Like em Comentarios
+
+###
+POST http://localhost:5000/usuarios/comentario/672d804e4ed9492e433e62f0/like 
+Content-Type: application/json
+
+{
+  "userId": "67241d7dca748411e52964d4"
+}
+
+//Buscar Comentarios
+###
+GET http://localhost:5000/usuarios/posts/672aab97e1fd27d07519dc27/comentarios
+Content-Type: application/json
+
+//Deletar Comentario
+###
+DELETE http://localhost:5000/usuarios/posts/672e7ad095c5f412c4a5cb98/comentarios/672aab97e1fd27d07519dc27
+Content-Type: application/json
+
+{
+    "usuarioId": "671a63383b8c4cd56090cca6"
+}
+ 
